@@ -1,0 +1,52 @@
+--INSERT INTO tbl_user (id, username, enrollment_number, password, email)
+--VALUES
+--(1, 'Alice Johnson', 'ENR001', '123456', 'alice@yopmail.com'),
+--(2, 'Bob Smith', 'ENR002', '123456', 'bob@yopmail.com');
+
+-- 2. Semesters
+--INSERT INTO semester (semester_id, semester_number) VALUES
+--(1, 1), (2, 2), (3, 3), (4, 4),
+--(5, 5), (6, 6), (7, 7), (8, 8);
+
+---- 3. Subjects (we’ll reuse same subjects for all semesters)
+--INSERT INTO subject (subject_id, subject_code, subject_name) VALUES
+--(1, 'MATH101', 'Calculus I'),
+--(2, 'PHY101', 'Physics I'),
+--(3, 'CS101', 'Intro to Programming'),
+--(4, 'ENG101', 'English Literature');
+-- Semester 1
+--INSERT INTO semester_result (student_id, semester_id, subject_id, marks_obtained, max_marks) VALUES
+--(3, 1, 1, 92, 100), (3, 1, 2, 88, 100), (3, 1, 3, 94, 100), (3, 1, 4, 90, 100),
+---- Semester 2
+--(3, 2, 1, 87, 100), (3, 2, 2, 85, 100), (3, 2, 3, 89, 100), (3, 2, 4, 91, 100),
+---- Semester 3
+--(3, 3, 1, 80, 100), (3, 3, 2, 79, 100), (3, 3, 3, 82, 100), (3, 3, 4, 77, 100),
+---- Semester 4
+--(3, 4, 1, 76, 100), (3, 4, 2, 81, 100), (3, 4, 3, 79, 100), (3, 4, 4, 75, 100),
+---- Semester 5
+--(3, 5, 1, 93, 100), (3, 5, 2, 95, 100), (3, 5, 3, 92, 100), (3, 5, 4, 94, 100),
+---- Semester 6
+--(3, 6, 1, 90, 100), (3, 6, 2, 88, 100), (3, 6, 3, 91, 100), (3, 6, 4, 89, 100),
+---- Semester 7
+--(3, 7, 1, 70, 100), (3, 7, 2, 74, 100), (3, 7, 3, 72, 100), (3, 7, 4, 76, 100),
+---- Semester 8
+--(3, 8, 1, 96, 100), (3, 8, 2, 94, 100), (3, 8, 3, 97, 100), (3, 8, 4, 95, 100);
+
+
+-- Semester 1
+--INSERT INTO semester_result (student_id, semester_id, subject_id, marks_obtained, max_marks) VALUES
+--(4, 1, 1, 60, 100), (4, 1, 2, 55, 100), (4, 1, 3, 62, 100), (4, 1, 4, 58, 100),
+---- Semester 2
+--(4, 2, 1, 65, 100), (4, 2, 2, 63, 100), (4, 2, 3, 67, 100), (4, 2, 4, 61, 100),
+---- Semester 3
+--(4, 3, 1, 70, 100), (4, 3, 2, 68, 100), (4, 3, 3, 64, 100), (4, 3, 4, 59, 100),
+---- Semester 4
+--(4, 4, 1, 50, 100), (4, 4, 2, 54, 100), (4, 4, 3, 57, 100), (4, 4, 4, 53, 100),
+---- Semester 5
+--(4, 5, 1, 72, 100), (4, 5, 2, 68, 100), (4, 5, 3, 70, 100), (4, 5, 4, 66, 100),
+---- Semester 6
+--(4, 6, 1, 63, 100), (4, 6, 2, 60, 100), (4, 6, 3, 58, 100), (4, 6, 4, 62, 100),
+---- Semester 7
+--(4, 7, 1, 55, 100), (4, 7, 2, 50, 100), (4, 7, 3, 54, 100), (4, 7, 4, 49, 100),
+---- Semester 8
+--(4, 8, 1, 65, 100), (4, 8, 2, 60, 100), (4, 8, 3, 62, 100), (4, 8, 4, 58, 100);
