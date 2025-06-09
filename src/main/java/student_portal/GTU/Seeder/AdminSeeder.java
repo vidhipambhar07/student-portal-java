@@ -19,8 +19,6 @@ public class AdminSeeder implements CommandLineRunner {
     @Autowired
     private  PasswordEncoder passwordEncoder;
 
-
-
     @Override
     public void run(String... args) throws Exception {
         if (!userRepository.existsByEmail("admin@gtu.com")) {
@@ -30,7 +28,6 @@ public class AdminSeeder implements CommandLineRunner {
             admin.setPassword(passwordEncoder.encode("admin123"));
             admin.setRole(Role.ADMIN);
             admin.setPhone("9999999999");
-
             userRepository.save(admin);
             System.out.println("✅ Admin user seeded successfully.");
         }

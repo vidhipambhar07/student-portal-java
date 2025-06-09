@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="student_portal.GTU.ServiceImpl.SemesterResultServiceImplTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-06-09T09:48:52.368Z" hostname="agilelpt-106" time="0.067">
+  <properties/>
+  <testcase name="testGetCgpaTrend()" classname="student_portal.GTU.ServiceImpl.SemesterResultServiceImplTest" time="0.058"/>
+  <testcase name="testGetResultsGroupedBySemester()" classname="student_portal.GTU.ServiceImpl.SemesterResultServiceImplTest" time="0.004"/>
+  <testcase name="testCalculateMeritRanking()" classname="student_portal.GTU.ServiceImpl.SemesterResultServiceImplTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

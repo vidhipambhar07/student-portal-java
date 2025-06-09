@@ -1,6 +1,5 @@
-package student_portal.GTU.ServiceImpt;
+package student_portal.GTU.ServiceImpl;
 
-import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -59,33 +58,32 @@ public class UserServiceImpt implements UserService {
         return userRepository.save(student);
 
     }
-    @Override
-    public void generateResetToken(ForgotPasswordRequest request) {
-        User user = null;
-        if (request.getEmail() != null && !request.getEmail().isEmpty()) {
-            user = userRepository.findByEmail(request.getEmail())
-                    .orElseThrow(() -> new RuntimeException("User not found with email"));
-        } else if (request.getEnrollmentNumber() != null && !request.getEnrollmentNumber().isEmpty()) {
-            user = userRepository.findByEnrollmentNumber(request.getEnrollmentNumber())
-                    .orElseThrow(() -> new RuntimeException("User not found with enrollment number"));
-        } else {
-            throw new RuntimeException("Email or Enrollment Number must be provided");
+        @Override
+        public void generateResetToken(ForgotPasswordRequest request) {
+            User user = null;
+            if (request.getEmail() != null && !request.getEmail().isEmpty()) {
+                user = userRepository.findByEmail(request.getEmail())
+                        .orElseThrow(() -> new RuntimeException("User not found with email"));
+            } else if (request.getEnrollmentNumber() != null && !request.getEnrollmentNumber().isEmpty()) {
+                user = userRepository.findByEnrollmentNumber(request.getEnrollmentNumber())
+                        .orElseThrow(() -> new RuntimeException("User not found with enrollment number"));
+            } else {
+                throw new RuntimeException("Email or Enrollment Number must be provided");
+            }
+
+            if (!user.getRole().name().equalsIgnoreCase(request.getRole())) {
+                throw new RuntimeException("Role mismatch or unauthorized");
+            }
+
+
+            String token = UUID.randomUUID().toString();
+            user.setResetToken(token);
+
+            user.setResetTokenExpiry(LocalDateTime.now().plusMinutes(resetTokenExpiryMinutes));
+            userRepository.save(user);
+            String resetLink = "http://localhost:8081/reset-password?token=" + token;
+            emailService.sendResetEmail(user.getEmail(), user.getUsername(), resetLink);
         }
-
-        if (!user.getRole().name().equalsIgnoreCase(request.getRole())) {
-            throw new RuntimeException("Role mismatch or unauthorized");
-        }
-
-
-        // Generate token and send email logic here (same as before)
-        String token = UUID.randomUUID().toString();
-        user.setResetToken(token);
-
-        user.setResetTokenExpiry(LocalDateTime.now().plusMinutes(resetTokenExpiryMinutes));
-        userRepository.save(user);
-        String resetLink = "http://localhost:8081/reset-password?token=" + token;
-        emailService.sendResetEmail(user.getEmail(), user.getUsername(), resetLink);
-    }
 
     @Override
     public boolean resetPassword(ResetPasswordRequest request) {
@@ -112,12 +110,10 @@ public boolean changePassword(String username, ChangePasswordRequest request) {
         return false;
     }
     User user = optionalUser.get();
-    // Verify old password
     if (!passwordEncoder.matches(request.getOldPassword(), user.getPassword())) {
         return false;
     }
 
-    // Save new password
     user.setPassword(passwordEncoder.encode(request.getNewPassword()));
     userRepository.save(user);
     return true;
@@ -131,7 +127,6 @@ public boolean updateStudentProfile(String email, StudentProfileUpdateRequest re
     User user = optionalUser.get();
     user.setUsername(request.getUsername());
     user.setPhone(request.getPhone());
-    // Handle password change if both old and new password are provided
     if (request.getOldPassword() != null && request.getNewPassword() != null) {
         if (!passwordEncoder.matches(request.getOldPassword(), user.getPassword())) {
             return false;

@@ -7,6 +7,10 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "refresh_tokens")
 public class RefreshToken {
+//    public RefreshToken(User user, String token) {
+//        this.user = user;
+//        this.token = token;
+//    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

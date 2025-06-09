@@ -12,6 +12,14 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "tbl_user")
 public class User {
+    public User() {
+    }
+    public User(String username, String email, String password, Role role) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

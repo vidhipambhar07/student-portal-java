@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="student_portal.GTU.ServiceImpl.UserServiceImptTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2025-06-09T09:48:52.437Z" hostname="agilelpt-106" time="0.133">
+  <properties/>
+  <testcase name="testGenerateResetToken_RoleMismatch_Throws()" classname="student_portal.GTU.ServiceImpl.UserServiceImptTest" time="0.073"/>
+  <testcase name="testGenerateResetToken_ByEmail_Success()" classname="student_portal.GTU.ServiceImpl.UserServiceImptTest" time="0.005"/>
+  <testcase name="testChangePassword_Success()" classname="student_portal.GTU.ServiceImpl.UserServiceImptTest" time="0.002"/>
+  <testcase name="testGetUserIdByEmail_Success()" classname="student_portal.GTU.ServiceImpl.UserServiceImptTest" time="0.003"/>
+  <testcase name="testResetPassword_TokenExpired()" classname="student_portal.GTU.ServiceImpl.UserServiceImptTest" time="0.003"/>
+  <testcase name="testUpdateStudentProfile_PasswordChangeSuccess()" classname="student_portal.GTU.ServiceImpl.UserServiceImptTest" time="0.003"/>
+  <testcase name="testGenerateResetToken_MissingEmailAndEnrollmentNumber_Throws()" classname="student_portal.GTU.ServiceImpl.UserServiceImptTest" time="0.003"/>
+  <testcase name="testUpdateStudentProfile_UserNotFound()" classname="student_portal.GTU.ServiceImpl.UserServiceImptTest" time="0.002"/>
+  <testcase name="testChangePassword_OldPasswordMismatch()" classname="student_portal.GTU.ServiceImpl.UserServiceImptTest" time="0.004"/>
+  <testcase name="testResetPassword_Success()" classname="student_portal.GTU.ServiceImpl.UserServiceImptTest" time="0.003"/>
+  <testcase name="testGenerateResetToken_ByEnrollmentNumber_Success()" classname="student_portal.GTU.ServiceImpl.UserServiceImptTest" time="0.003"/>
+  <testcase name="testCreateStudent_Success()" classname="student_portal.GTU.ServiceImpl.UserServiceImptTest" time="0.004"/>
+  <testcase name="testChangePassword_UserNotFound()" classname="student_portal.GTU.ServiceImpl.UserServiceImptTest" time="0.002"/>
+  <testcase name="testGetUserRoleByEmail()" classname="student_portal.GTU.ServiceImpl.UserServiceImptTest" time="0.002"/>
+  <testcase name="testUpdateStudentProfile_SuccessWithoutPasswordChange()" classname="student_portal.GTU.ServiceImpl.UserServiceImptTest" time="0.002"/>
+  <testcase name="testResetPassword_TokenNotFound()" classname="student_portal.GTU.ServiceImpl.UserServiceImptTest" time="0.002"/>
+  <testcase name="testGetUserIdByEmail_NotFound()" classname="student_portal.GTU.ServiceImpl.UserServiceImptTest" time="0.004"/>
+  <testcase name="testUpdateStudentProfile_PasswordMismatch()" classname="student_portal.GTU.ServiceImpl.UserServiceImptTest" time="0.002"/>
+  <testcase name="testCreateStudent_EmailAlreadyExists()" classname="student_portal.GTU.ServiceImpl.UserServiceImptTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

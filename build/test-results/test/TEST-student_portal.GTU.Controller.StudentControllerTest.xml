@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="student_portal.GTU.Controller.StudentControllerTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2025-06-09T09:48:52.158Z" hostname="agilelpt-106" time="0.096">
+  <properties/>
+  <testcase name="testGetStudentResults_Admin_WithStudentId()" classname="student_portal.GTU.Controller.StudentControllerTest" time="0.047"/>
+  <testcase name="testGetStudentResults_Admin_WithoutStudentId()" classname="student_portal.GTU.Controller.StudentControllerTest" time="0.002"/>
+  <testcase name="testGetStudentResults_Student_WithValidEmail()" classname="student_portal.GTU.Controller.StudentControllerTest" time="0.004"/>
+  <testcase name="testGetCgpaTrend_Success()" classname="student_portal.GTU.Controller.StudentControllerTest" time="0.004"/>
+  <testcase name="testUpdateProfile_Success()" classname="student_portal.GTU.Controller.StudentControllerTest" time="0.005"/>
+  <testcase name="testGetStudentRanking_StudentWithAutoId()" classname="student_portal.GTU.Controller.StudentControllerTest" time="0.003"/>
+  <testcase name="testUpdateProfile_Failure()" classname="student_portal.GTU.Controller.StudentControllerTest" time="0.004"/>
+  <testcase name="testGetStudentRanking_StudentIdNotFound()" classname="student_portal.GTU.Controller.StudentControllerTest" time="0.002"/>
+  <testcase name="testCreateStudent_Success()" classname="student_portal.GTU.Controller.StudentControllerTest" time="0.002"/>
+  <testcase name="testGetStudentResults_Student_EmailNotFound()" classname="student_portal.GTU.Controller.StudentControllerTest" time="0.003"/>
+  <testcase name="testGetCgpaTrend_StudentIdNotFound()" classname="student_portal.GTU.Controller.StudentControllerTest" time="0.007"/>
+  <testcase name="testGetStudentRanking_AdminWithStudentId()" classname="student_portal.GTU.Controller.StudentControllerTest" time="0.003"/>
+  <testcase name="testGetStudentRanking_AdminWithoutStudentId()" classname="student_portal.GTU.Controller.StudentControllerTest" time="0.002"/>
+  <system-out><![CDATA[krina@yopmail.com
+krina@yopmail.com
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

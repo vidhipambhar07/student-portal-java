@@ -6,6 +6,9 @@ public class SemesterGroupedResultDTO {
     private Integer semester;
     private List<SemesterSubjectDTO> subjects;
 
+    public SemesterGroupedResultDTO() {
+    }
+
     public SemesterGroupedResultDTO(Integer semester, List<SemesterSubjectDTO> subjects) {
         this.semester = semester;
         this.subjects = subjects;

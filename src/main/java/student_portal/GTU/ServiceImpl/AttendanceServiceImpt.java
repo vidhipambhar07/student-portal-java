@@ -1,4 +1,4 @@
-package student_portal.GTU.ServiceImpt;
+package student_portal.GTU.ServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -42,7 +42,6 @@ public class AttendanceServiceImpt implements AttendanceService {
 
         return attendanceRepository.save(attendance);
     }
-
 
     public List<AttendanceSummaryDTO> getMonthlyAttendanceSummary(int month, int year) {
         List<Object[]> rawData = attendanceRepository.getMonthlyAttendanceSummary(month, year);

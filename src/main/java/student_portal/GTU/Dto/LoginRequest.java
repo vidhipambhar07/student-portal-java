@@ -2,8 +2,19 @@ package student_portal.GTU.Dto;
 
 public class LoginRequest {
     private String loginId; // Can be email or enrollment number
-    private String email;
+//    private String email;
     private String role;
+    private String password;
+    public LoginRequest(String loginId, String role, String password) {
+        this.loginId = loginId;
+//        this.email = email;
+        this.role = role;
+        this.password = password;
+    }
+
+    public LoginRequest() {
+
+    }
 
     public String getRole() {
         return role;
@@ -29,15 +40,15 @@ public class LoginRequest {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
-    }
+//    public String getEmail() {
+//        return email;
+//    }
+//
+//    public void setEmail(String email) {
+//        this.email = email;
+//    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    private String password;
+//    private String password;
 
 }
 

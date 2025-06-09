@@ -1,4 +1,4 @@
-package student_portal.GTU.ServiceImpt;
+package student_portal.GTU.ServiceImpl;
 
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;

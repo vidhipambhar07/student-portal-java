@@ -5,9 +5,16 @@ import lombok.*;
 
 @Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class SemesterResult {
+
+    public SemesterResult(Long resultId, Semester semester, Subject subject, User student, Integer marksObtained, Integer maxMarks) {
+        this.resultId = resultId;
+        this.semester = semester;
+        this.subject = subject;
+        this.student = student;
+        this.marksObtained = marksObtained;
+        this.maxMarks = maxMarks;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

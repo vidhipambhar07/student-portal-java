@@ -1,4 +1,4 @@
-package student_portal.GTU.ServiceImpt;
+package student_portal.GTU.ServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -123,8 +123,7 @@ public class SemesterResultServiceImpl implements SemesterResultService {
         return cgpaTrend;
     }
 
-    private double percentageToCGPA(double percentage) {
-        // Example: convert 90% → 9.0 CGPA (scale of 10)
+    public double percentageToCGPA(double percentage) {
         return percentage / 10.0;
     }
     @Override

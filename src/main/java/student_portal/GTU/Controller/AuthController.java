@@ -27,6 +27,13 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
+    public AuthController(AuthenticationManager authManager, JwtService jwtService, UserRepository userRepository,RefreshTokenService refreshTokenService, UserService userService) {
+        this.authManager = authManager;
+        this.jwtService = jwtService;
+        this.userRepository = userRepository;
+        this.refreshTokenService = refreshTokenService;
+        this.userService = userService;
+    }
 
     @Autowired
     private AuthenticationManager authManager;

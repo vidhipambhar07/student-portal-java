@@ -34,7 +34,6 @@ public class StudentController {
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public ResponseEntity<?> createStudent(@RequestBody CreateStudentRequest request) {
-
         User createdStudent = userService.createStudent(request);
         return ResponseEntity.ok(new SuccessResponse<>(createdStudent, 200, ApiMessages.STUDENT_CREATED));
     }
@@ -50,9 +49,6 @@ public class StudentController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Profile update failed.");
         }
     }
-
-
-
     @GetMapping("/results")
     public ResponseEntity<List<SemesterGroupedResultDTO>> getStudentResults(Principal principal, @RequestParam(required = false) Long studentId) {
         // 1. Get logged-in user email
@@ -60,9 +56,7 @@ public class StudentController {
 
         // 2. Get user role
         String role = userService.getUserRoleByEmail(email);
-
         Long effectiveStudentId;
-
         if ("ADMIN".equalsIgnoreCase(role)) {
             // Admin must provide studentId as request param
             if (studentId == null) {
@@ -78,7 +72,6 @@ public class StudentController {
         }
         // Fetch results for the effective studentId
         List<SemesterGroupedResultDTO> results = semesterResultService.getResultsGroupedBySemester(effectiveStudentId);
-
         return ResponseEntity.ok(results);
     }
 
@@ -108,9 +101,8 @@ public class StudentController {
         String email = principal.getName();
         Long studentId = userService.getUserIdByEmail(email);
         if (studentId == null) return ResponseEntity.badRequest().build();
-
         List<CgpaTrendDTO> cgpaTrend = semesterResultService.getCgpaTrend(studentId);
-        return ResponseEntity.ok(cgpaTrend);
+       return ResponseEntity.ok(cgpaTrend);
     }
 
 }
